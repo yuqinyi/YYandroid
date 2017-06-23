@@ -61,6 +61,7 @@ dependencies {
     compile 'com.tencent.bugly:crashreport:latest.release'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile "com.android.support:cardview-v7:${rootProject.ext.support}"
+    compile "com.android.support:recyclerview-v7:${rootProject.ext.support}"
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
 
     //头条
