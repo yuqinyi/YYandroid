@@ -7,12 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.yuqinyidev.android.yyandroid.R;
+import com.yuqinyidev.android.yyandroid.fw.ui.fragment.BaseFragment;
 
 /**
  * Created by RDX64 on 2017/6/22.
  */
 
-public class FragmentMainNotice extends Fragment {
+public class FragmentMainNotice extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
