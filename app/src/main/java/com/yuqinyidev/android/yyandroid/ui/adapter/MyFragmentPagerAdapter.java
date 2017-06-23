@@ -1,11 +1,11 @@
-package com.yuqinyidev.android.yyandroid.fw.adapter;
+package com.yuqinyidev.android.yyandroid.ui.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.yuqinyidev.android.yyandroid.ui.fragment.FragmentMainDiscover;
-import com.yuqinyidev.android.yyandroid.ui.fragment.FragmentMainHomePage;
+import com.yuqinyidev.android.yyandroid.ui.fragment.FragmentMainHome;
 import com.yuqinyidev.android.yyandroid.ui.fragment.FragmentMainMine;
 import com.yuqinyidev.android.yyandroid.ui.fragment.FragmentMainNotice;
 
@@ -30,7 +30,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
             case 3:
                 return new FragmentMainMine();
         }
-        return new FragmentMainHomePage();
+        return new FragmentMainHome();
     }
 
     @Override

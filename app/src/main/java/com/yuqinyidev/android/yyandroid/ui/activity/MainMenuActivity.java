@@ -1,24 +1,20 @@
 package com.yuqinyidev.android.yyandroid.ui.activity;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.support.design.widget.TabLayout;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.yuqinyidev.android.yyandroid.R;
-import com.yuqinyidev.android.yyandroid.fw.adapter.MyFragmentPagerAdapter;
-import com.yuqinyidev.android.yyandroid.fw.custom.MyViewPager;
+import com.yuqinyidev.android.yyandroid.fw.ui.activity.BaseActivity;
+import com.yuqinyidev.android.yyandroid.fw.ui.custom.MyViewPager;
+import com.yuqinyidev.android.yyandroid.ui.adapter.MyFragmentPagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainMenuActivity extends AppCompatActivity {
+public class MainMenuActivity extends BaseActivity {
     @BindView(R.id.view_pager)
     MyViewPager mViewPager;
 
@@ -32,7 +28,6 @@ public class MainMenuActivity extends AppCompatActivity {
     private TabLayout.Tab three;
     private TabLayout.Tab four;
 
-    // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
     }
@@ -40,6 +35,12 @@ public class MainMenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+            View decorView = getWindow().getDecorView();
+            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            decorView.setSystemUiVisibility(option);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
         setContentView(R.layout.activity_main_menu);
         ButterKnife.bind(this);
         initView();
@@ -63,9 +64,4 @@ public class MainMenuActivity extends AppCompatActivity {
         four.setIcon(R.drawable.ic_mine_black_24dp);
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
 }

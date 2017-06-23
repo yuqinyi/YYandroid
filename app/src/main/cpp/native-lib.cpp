@@ -3,7 +3,7 @@
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_yuqinyidev_android_yyandroid_ui_activity_MainMenuActivity_stringFromJNI(
+Java_com_yuqinyidev_android_yyandroid_fw_ui_activity_BaseActivity_stringFromJNI(
         JNIEnv *env,
         jobject /* this */) {
     std::string hello = "Hello from C++";

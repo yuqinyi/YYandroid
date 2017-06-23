@@ -1,4 +1,4 @@
-package com.yuqinyidev.android.yyandroid.fw.custom;
+package com.yuqinyidev.android.yyandroid.fw.ui.custom;
 
 import android.content.Context;
 import android.support.annotation.Px;
@@ -28,25 +28,17 @@ public class MyViewPager extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        if (noScroll) {
-            return false;
-        } else {
-            return super.onTouchEvent(ev);
-        }
+        return !noScroll && super.onTouchEvent(ev);
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (noScroll) {
-            return false;
-        } else {
-            return super.onInterceptTouchEvent(ev);
-        }
+        return !noScroll && super.onInterceptTouchEvent(ev);
     }
 
     @Override
     public void setCurrentItem(int item) {
-        super.setCurrentItem(item);
+        super.setCurrentItem(item, false);
     }
 
     @Override
