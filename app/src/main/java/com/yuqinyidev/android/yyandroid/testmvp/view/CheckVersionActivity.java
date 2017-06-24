@@ -60,11 +60,7 @@ public class CheckVersionActivity extends BaseActivity<MainPresenterImpl> implem
     }
 
     @Override
-    public void showError(String msg) {
-    }
-
-    @Override
-    public void useNightMode(boolean isNight) {
+    public void showErrorDialog(String msg) {
     }
 
     @Override

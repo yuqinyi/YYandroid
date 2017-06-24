@@ -20,13 +20,13 @@ public class LoginPresenter implements ILoginPresenter {
 
     @Override
     public void login(String loginUser, String loginPassword) {
-        loginView.showProgress(true);
+        loginView.showProgressDialog();
         loginModel.login(loginUser, loginPassword);
     }
 
     @Override
     public void loginSucceed() {
-        loginView.showProgress(false);
+        loginView.hideProgressDialog();
         loginView.showLoginView();
     }
 }

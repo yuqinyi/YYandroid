@@ -53,26 +53,37 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
     }
 
     @Override
-    public void showProgress(boolean enable) {
-        if (enable) {
-            progressBar.setVisibility(View.VISIBLE);
-            loginLayout.setVisibility(View.GONE);
-        } else {
-            progressBar.setVisibility(View.GONE);
-            loginLayout.setVisibility(View.VISIBLE);
-        }
-    }
-
-    @Override
     public void showLoginView() {
         Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
         CheckVersionActivity.start();
         finish();
     }
 
+    @Override
+    public void showToast(String message) {
+
+    }
+
     public static void start() {
         Intent intent = new Intent(YYApp.getInstance().getContext(), LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
         YYApp.getInstance().getContext().startActivity(intent);
+    }
+
+    @Override
+    public void showProgressDialog() {
+        progressBar.setVisibility(View.VISIBLE);
+        loginLayout.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void hideProgressDialog() {
+        progressBar.setVisibility(View.GONE);
+        loginLayout.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showErrorDialog(String msg) {
+
     }
 }

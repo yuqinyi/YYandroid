@@ -5,7 +5,13 @@ package com.yuqinyidev.android.yyandroid.fw.view;
  */
 
 public interface IBaseView {
-    void showError(String msg);
 
-    void useNightMode(boolean isNight);
+    void showProgressDialog();
+
+    void hideProgressDialog();
+
+    void showErrorDialog(String msg);
+
+    void showToast(String message);
+
 }
