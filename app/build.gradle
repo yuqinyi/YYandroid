@@ -70,6 +70,7 @@ dependencies {
 
     //动画库
     compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.balysv:material-ripple:1.0.2'
 
     //测试
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {

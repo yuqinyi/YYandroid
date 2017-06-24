@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.yuqinyidev.android.yyandroid.R;
+import com.yuqinyidev.android.yyandroid.fw.ui.activity.BaseActivity;
 import com.yuqinyidev.android.yyandroid.trainingdiary.presenter.UserPresenter;
 import com.yuqinyidev.android.yyandroid.trainingdiary.view.IUserView;
 

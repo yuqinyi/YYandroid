@@ -10,7 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yuqinyidev.android.yyandroid.R;
-import com.yuqinyidev.android.yyandroid.fw.app.MyApplication;
+import com.yuqinyidev.android.yyandroid.fw.app.YYApp;
+import com.yuqinyidev.android.yyandroid.testmvp.view.CheckVersionActivity;
 import com.yuqinyidev.android.yyandroid.trainingdiary.TrainingDiaryActivity;
 import com.yuqinyidev.android.yyandroid.ui.dto.AppIcon;
 
@@ -39,9 +40,9 @@ public class AppIconAdapter extends RecyclerView.Adapter<AppIconAdapter.ViewHold
                 AppIcon fruit = mAppIconList.get(position);
                 Toast.makeText(v.getContext(), "You clicked view: " + fruit.getName(), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(MyApplication.getContext(), TrainingDiaryActivity.class);
+                Intent intent = new Intent(YYApp.getInstance().getContext(), CheckVersionActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-                MyApplication.getContext().startActivity(intent);
+                YYApp.getInstance().getContext().startActivity(intent);
             }
         });
 //        holder.appIconImage.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +51,7 @@ public class AppIconAdapter extends RecyclerView.Adapter<AppIconAdapter.ViewHold
 //                int position = holder.getAdapterPosition();
 //                AppIcon fruit = mAppIconList.get(position);
 //                Toast.makeText(v.getContext(), "You clicked image: " + fruit.getName(), Toast.LENGTH_SHORT).show();
-////                TrainingDiaryActivity.startAction(MyApplication.getContext());
+////                TrainingDiaryActivity.startAction(YYApp.getContext());
 //            }
 //        });
         return holder;

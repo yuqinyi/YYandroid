@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.yuqinyidev.android.yyandroid.R;
@@ -14,7 +15,7 @@ import com.yuqinyidev.android.yyandroid.ui.adapter.MyFragmentPagerAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainMenuActivity extends BaseActivity {
+public class MainMenuActivity extends AppCompatActivity {
     @BindView(R.id.view_pager)
     MyViewPager mViewPager;
 
