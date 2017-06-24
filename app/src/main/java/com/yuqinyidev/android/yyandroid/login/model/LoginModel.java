@@ -21,11 +21,11 @@ public class LoginModel implements ILoginModel {
     }
 
     @Override
-    public void login(String loginUser, String loginPassword) {
+    public void login(final String loginUser, final String loginPassword) {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                LogUtil.d("LoginModel", "run: ");
+                LogUtil.d("LoginModel", "user: " + loginUser + "\tpassword: " + loginPassword);
                 presenter.loginSucceed();
             }
         }, 2000);

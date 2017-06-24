@@ -1,5 +1,6 @@
 package com.yuqinyidev.android.yyandroid.testmvp.view;
 
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.yuqinyidev.android.yyandroid.R;
+import com.yuqinyidev.android.yyandroid.fw.app.YYApp;
 import com.yuqinyidev.android.yyandroid.fw.bean.IBaseBean;
 import com.yuqinyidev.android.yyandroid.fw.ui.activity.BaseActivity;
 import com.yuqinyidev.android.yyandroid.testmvp.bean.VersionBean;
@@ -40,8 +42,6 @@ public class CheckVersionActivity extends BaseActivity<MainPresenterImpl> implem
     @Override
     protected void initEventAndData() {
         btnGetVersion.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -59,20 +59,16 @@ public class CheckVersionActivity extends BaseActivity<MainPresenterImpl> implem
         mPresenter = new MainPresenterImpl();
     }
 
-
     @Override
     public void showError(String msg) {
-
     }
 
     @Override
     public void useNightMode(boolean isNight) {
-
     }
 
     @Override
     public void showUpdateDialog(IBaseBean bean) {
-
     }
 
     @Override
@@ -90,7 +86,6 @@ public class CheckVersionActivity extends BaseActivity<MainPresenterImpl> implem
         Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
     }
 
-
     @Override
     public void onClick(View view) {
         try {
@@ -102,4 +97,11 @@ public class CheckVersionActivity extends BaseActivity<MainPresenterImpl> implem
             e.printStackTrace();
         }
     }
+
+    public static void start() {
+        Intent intent = new Intent(YYApp.getInstance().getContext(), CheckVersionActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        YYApp.getInstance().getContext().startActivity(intent);
+    }
+
 }

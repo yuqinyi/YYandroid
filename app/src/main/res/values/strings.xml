@@ -4,4 +4,5 @@
     <string name="title_dashboard">发现</string>
     <string name="title_notifications">通知</string>
     <string name="title_about_me">我的</string>
+    <string name="action_login">登录</string>
 </resources>

@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.yuqinyidev.android.yyandroid.R;
 import com.yuqinyidev.android.yyandroid.fw.app.YYApp;
+import com.yuqinyidev.android.yyandroid.login.LoginActivity;
 import com.yuqinyidev.android.yyandroid.testmvp.view.CheckVersionActivity;
 import com.yuqinyidev.android.yyandroid.trainingdiary.TrainingDiaryActivity;
 import com.yuqinyidev.android.yyandroid.ui.dto.AppIcon;
@@ -40,9 +41,7 @@ public class AppIconAdapter extends RecyclerView.Adapter<AppIconAdapter.ViewHold
                 AppIcon fruit = mAppIconList.get(position);
                 Toast.makeText(v.getContext(), "You clicked view: " + fruit.getName(), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(YYApp.getInstance().getContext(), CheckVersionActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-                YYApp.getInstance().getContext().startActivity(intent);
+                LoginActivity.start();
             }
         });
 //        holder.appIconImage.setOnClickListener(new View.OnClickListener() {
