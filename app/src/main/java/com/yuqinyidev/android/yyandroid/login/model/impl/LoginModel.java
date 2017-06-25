@@ -1,10 +1,9 @@
-package com.yuqinyidev.android.yyandroid.login.model;
+package com.yuqinyidev.android.yyandroid.login.model.impl;
 
 import android.os.Handler;
-import android.util.Log;
 
-import com.blankj.utilcode.util.LogUtils;
-import com.yuqinyidev.android.yyandroid.fw.utils.LogUtil;
+import com.yuqinyidev.android.yyandroid.fw.utils.LogUtils;
+import com.yuqinyidev.android.yyandroid.login.model.ILoginModel;
 import com.yuqinyidev.android.yyandroid.login.presenter.ILoginPresenter;
 
 /**
@@ -25,7 +24,7 @@ public class LoginModel implements ILoginModel {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                LogUtil.d("LoginModel", "user: " + loginUser + "\tpassword: " + loginPassword);
+                LogUtils.d("LoginModel", "user: " + loginUser + "\tpassword: " + loginPassword);
                 presenter.loginSucceed();
             }
         }, 2000);

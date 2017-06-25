@@ -12,17 +12,14 @@ import android.widget.Toast;
 
 import com.yuqinyidev.android.yyandroid.R;
 import com.yuqinyidev.android.yyandroid.fw.app.YYApp;
-import com.yuqinyidev.android.yyandroid.fw.ui.activity.BaseActivity;
 import com.yuqinyidev.android.yyandroid.login.presenter.ILoginPresenter;
-import com.yuqinyidev.android.yyandroid.login.presenter.LoginPresenter;
+import com.yuqinyidev.android.yyandroid.login.presenter.impl.LoginPresenter;
 import com.yuqinyidev.android.yyandroid.login.view.ILoginView;
 import com.yuqinyidev.android.yyandroid.testmvp.view.CheckVersionActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-import static com.yuqinyidev.android.yyandroid.R.id.progressBar;
 
 public class LoginActivity extends AppCompatActivity implements ILoginView {
 

@@ -1,7 +1,8 @@
-package com.yuqinyidev.android.yyandroid.login.presenter;
+package com.yuqinyidev.android.yyandroid.login.presenter.impl;
 
 import com.yuqinyidev.android.yyandroid.login.model.ILoginModel;
-import com.yuqinyidev.android.yyandroid.login.model.LoginModel;
+import com.yuqinyidev.android.yyandroid.login.model.impl.LoginModel;
+import com.yuqinyidev.android.yyandroid.login.presenter.ILoginPresenter;
 import com.yuqinyidev.android.yyandroid.login.view.ILoginView;
 
 /**

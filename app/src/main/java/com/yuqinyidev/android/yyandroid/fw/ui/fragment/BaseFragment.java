@@ -4,13 +4,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.yuqinyidev.android.yyandroid.fw.ui.view.BaseView;
-import com.yuqinyidev.android.yyandroid.fw.utils.LogUtil;
+import com.yuqinyidev.android.yyandroid.fw.utils.LogUtils;
 
 import butterknife.Unbinder;
 
@@ -77,7 +75,7 @@ public abstract class BaseFragment extends Fragment {
         if (!isPrepared || !isVisible || !isFirst) {
             return;
         }
-        LogUtil.d("TAG", getClass().getName() + "->initData()");
+        LogUtils.d("TAG", getClass().getName() + "->initData()");
         initData();
         isFirst = false;
     }
