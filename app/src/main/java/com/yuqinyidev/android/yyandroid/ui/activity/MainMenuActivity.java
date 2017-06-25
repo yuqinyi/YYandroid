@@ -14,6 +14,7 @@ import com.yuqinyidev.android.yyandroid.ui.adapter.MyFragmentPagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public class MainMenuActivity extends AppCompatActivity {
     @BindView(R.id.view_pager)
@@ -21,6 +22,8 @@ public class MainMenuActivity extends AppCompatActivity {
 
     @BindView(R.id.tab_layout)
     TabLayout mTabLayout;
+
+    protected Unbinder mUnbinder;
 
     private MyFragmentPagerAdapter myFragmentPagerAdapter;
 
@@ -43,8 +46,14 @@ public class MainMenuActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
         setContentView(R.layout.activity_main_menu);
-        ButterKnife.bind(this);
+        mUnbinder = ButterKnife.bind(this);
         initView();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mUnbinder.unbind();
     }
 
     private void initView() {
